@@ -176,17 +176,19 @@ Command.prototype.command = function(name, desc, opts) {
   var cmd = new Command(args.shift());
 
   if (desc) {
+    /*
     cmd.description(desc);
     this.executables = true;
     this._execs[cmd._name] = true;
     if (opts.isDefault) this.defaultExecutable = cmd._name;
+    */
   }
   cmd._noHelp = !!opts.noHelp;
   this.commands.push(cmd);
   cmd.parseExpectedArgs(args);
   cmd.parent = this;
 
-  if (desc) return this;
+  //if (desc) return this;
   return cmd;
 };
 
